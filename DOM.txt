@@ -1,0 +1,8 @@
+The Virtual DOM is a lightweight, in-memory representation of the Real DOM.
+React uses this representation to determine 
+what needs to change when your application’s data changes.
+
+
+DOM stands for Document Object Model.
+The Real DOM is the actual structure of your 
+HTML webpage that the browser creates and displays.
