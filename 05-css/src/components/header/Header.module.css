@@ -1,0 +1,20 @@
+.header{
+    background-color: lightseagreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.btn {
+    background-color: #9a9a30; 
+    color: #fff;
+    font-size: 18px;
+    padding: 2px 6px;
+}
+
+.logo{
+    text-decoration: underline;
+    
+}

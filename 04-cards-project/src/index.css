@@ -10,27 +10,29 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background: #111; /* fixes the white strip */
 }
 
 .parent {
-  height: 100vh;
-  width: 100%;
-  background-color: #111;
-  padding: 30px;
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
+  padding: 50px;
+  background: #111;
+  min-height: 100vh;
 }
 
 .card {
   height: 330px;
-  width: 280px;
+  width: calc((100% - 90px) / 4); /* 4 per row: 3 gaps x 30px = 90px */
+  min-width: 300px;               /* never get squished below this */
+  flex-shrink: 0;
   background-color: #fff;
   border-radius: 30px;
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 /* makes all text inside the card dark, since the card background is white */
@@ -61,10 +63,9 @@ body {
   border-radius: 5px;
   padding: 3px 6px;
   gap: 3px;
-  font-size: 10px; 
+  font-size: 10px;
   background-color: transparent;
   color: #b1b1b1;
-
 }
 
 .top button svg,
@@ -87,39 +88,36 @@ body {
   outline: none;
 }
 
-.center{
-  
+.center {
 }
 
-.bottom{
+.bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 1.5px solid #d7d7d7ce;
   padding-top: 15px;
-
 }
 
-.center h3{
+.center h3 {
   font-size: 17px;
   font-weight: 500;
-
 }
 
-.center h3 span{
+.center h3 span {
   font-size: 9px;
   font-weight: 400;
   color: #8b8b8b;
-
 }
 
-.center .tag{
+.center .tag {
   display: flex;
-   margin-top: 10px;
+  flex-wrap: wrap; /* tags wrap as a whole instead of breaking inside */
+  margin-top: 10px;
   gap: 5px;
 }
 
-.center .tag h4{
+.center .tag h4 {
   font-size: 10px;
   background-color: #dadada;
   color: #111;
@@ -128,35 +126,37 @@ body {
   border-radius: 3px;
 }
 
-.center h2{
+.center h2 {
   font-size: 20px;
   font-weight: 600;
-
 }
 
-.center h3 span{
+.center h3 span {
   font-size: 10px;
   font-weight: 400;
   color: #8b8b8b;
-
 }
 
-.bottom button{
+.bottom button {
   background-color: black;
   color: white;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
-  column-width: 600;
-
 }
 
-.bottom h3{
+.bottom h3 {
   font-size: 17px;
-
 }
-.bottom p{
+
+.bottom p {
   font-size: 10px;
   color: #8b8b8b;
+}
 
+/* keeps these on one line */
+.center .tag h4,
+.bottom button,
+.bottom h3 {
+  white-space: nowrap;
 }
