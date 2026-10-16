@@ -1,15 +1,12 @@
 import React from 'react'
+import HeroText from './HeroText'
+import Arrow from './Arrow'
 
 const LeftContent = () => {
   return (
     <div className='h-full flex flex-col justify-between w-1/3 ' >
-        <div className='p-6'>
-            <h3 className='mb-7 leading-[1.1] text-6xl font-bold'>Prospective <br/><span className='text-gray-600'>customer </span> <br/>segmentation</h3>
-            <p className='text-xl font-medium text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore voluptatem est obcaecati ipsa atque? Eos pariatur nesciunt, totam ipsam a sapiente sit, ullam voluptatibus eaque, consequuntur ducimus assumenda odio. Ab!</p>
-        </div>
-        <div className='text-8xl '>
-        <i className="ri-arrow-right-up-line"></i>
-        </div>
+        <HeroText />
+        <Arrow />
     </div>
   )
 }
