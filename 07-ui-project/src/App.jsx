@@ -22,7 +22,7 @@ const App = () => {
     {
       img:'https://plus.unsplash.com/premium_photo-1661274209157-118069b926f3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D',
       intro:'',
-      tag:'Average',
+      tag:'Average ',
     }
   ]
 
