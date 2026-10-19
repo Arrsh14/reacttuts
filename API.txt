@@ -1,0 +1,11 @@
+API->
+It helps in joining frontend with the backend.
+
+Frontend shares the request.
+Backend gives the required response.
+
+Axios is a promise-based HTTP client library for 
+JavaScript that works in 
+both the browser and Node.js. 
+It’s an alternative to the built-in fetch, 
+with some conveniences baked in.

@@ -1,0 +1,49 @@
+1. What is React Router DOM?
+
+React Router DOM is a library that allows you to navigate between different pages of a React application without reloading the entire website.
+
+Imagine you’re building a website with these pages:
+
+* / → Home page
+* /about → About page
+* /login → Login page
+* /profile → Profile page
+
+
+BrowserRouter
+
+Uses the browser’s History API (pushState), so URLs look normal:
+
+https://example.com/about
+https://example.com/users/42
+
+This is the default choice for most apps. The catch is that the server must be configured to serve index.html for every route. Otherwise, refreshing on /about or opening that link directly returns a 404, because the server looks for an actual /about file. Vite’s dev server handles this for you, but production hosting (Nginx, Netlify, Vercel, etc.) needs a fallback rule.
+
+HashRouter
+
+Puts the route after a # in the URL:
+
+https://example.com/#/about
+https://example.com/#/users/42
+
+The browser never sends anything after # to the server, so the server only ever sees /. That means no server configuration is needed and refreshes never 404. Downsides: uglier URLs and weaker SEO. It’s useful for static hosting where you can’t set up fallbacks (e.g., GitHub Pages without workarounds) or for things like Electron apps.
+
+MemoryRouter
+
+Keeps the route history in memory, so the URL in the address bar never changes. Navigation works inside the app, but there’s no link sharing, and refreshing resets it. It’s mainly used for:
+
+Tests (rendering components with routing without a browser URL)
+React Native or embedded widgets
+Apps that live inside something that doesn’t have a normal URL bar
+
+Usage (all three are used the same way):
+
+javascript
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+  </Routes>
+</BrowserRouter>
